@@ -127,6 +127,9 @@ vim.opt.clipboard = 'unnamedplus'
 --   },
 --   cache_enabled = false,
 -- }
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldenable = false
 -- Enable break indent
 vim.opt.breakindent = true
 
@@ -702,7 +705,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'black' },
+        -- python = { 'isort', 'black' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
