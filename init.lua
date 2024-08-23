@@ -210,6 +210,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- custom keymaps
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 
+vim.keymap.set('n', '[q', '<CMD>cprev<CR>', { desc = 'Go to prev item in quick list' })
+vim.keymap.set('n', ']q', '<CMD>cnext<CR>', { desc = 'Go to next item in quick list' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
