@@ -14,7 +14,7 @@ return {
       desc = 'Harpoon Add to list',
     },
     {
-      '<leader>pt',
+      '<leader>pl',
       function()
         local harpoon = require 'harpoon'
         harpoon.ui:toggle_quick_menu(harpoon:list())
