@@ -215,6 +215,8 @@ vim.keymap.set('n', '[q', '<CMD>cprev<CR>', { desc = 'Go to prev item in quick l
 vim.keymap.set('n', ']q', '<CMD>cnext<CR>', { desc = 'Go to next item in quick list' })
 vim.keymap.set('n', '[b', '<CMD>bprev<CR>', { desc = 'Go to prev item in buffer' })
 vim.keymap.set('n', ']b', '<CMD>bnext<CR>', { desc = 'Go to next item in buffer' })
+vim.keymap.set('n', 'lk', '<Esc>', { noremap = true, silent = true, desc = 'Remapping lk keypress to esc' })
+vim.keymap.set('i', 'lk', '<Esc>', { noremap = true, silent = true, desc = 'Remapping lk keypress to esc' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -715,7 +717,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         --
 
         lua_ls = {
