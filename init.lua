@@ -374,6 +374,9 @@ require('lazy').setup({
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+    config = function()
+      require('transparent').clear_prefix 'WhichKey'
+    end,
     opts = {
       icons = {
         -- set icon mappings to true if you have a Nerd Font
@@ -494,6 +497,8 @@ require('lazy').setup({
           },
         },
       }
+
+      require('transparent').clear_prefix 'Telescope'
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
@@ -940,6 +945,7 @@ require('lazy').setup({
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
+    opts = { transparent = true, plugins = { telescope = true } },
   },
 
   -- Highlight todo, notes, etc in comments
@@ -1068,6 +1074,12 @@ require('lazy').setup({
     },
   },
 })
-
+-- Make the background transparent
+-- vim.cmd [[
+--   highlight Normal guibg=none
+--   highlight NonText guibg=none
+--   highlight Normal ctermbg=none
+--   highlight NonText ctermbg=none
+-- ]]
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
